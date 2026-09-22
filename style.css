@@ -104,7 +104,15 @@ body::before{
     backdrop-filter:blur(20px);
 }
 .menu-profile{display:flex;gap:12px;align-items:center;padding-bottom:16px;border-bottom:1px solid var(--line)}
-.menu-profile img{width:104px;height:104px;object-fit:cover;border-radius:80px;border:1px solid var(--gym-cyan);background:#121b23}
+.menu-profile img{
+  width:104px;
+  height:104px;
+  object-fit:contain;
+  border-radius:18px;
+  border:1px solid var(--gym-cyan);
+  background:#121b23;
+  display:block;
+}
 .menu-profile strong{font-size:12px;display:block;letter-spacing:.08em}
 .menu-profile small{display:block;color:var(--gym-cyan);font-size:9px;margin-top:5px}
 .menu-section{padding:14px 0;border-bottom:1px solid var(--line)}
