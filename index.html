@@ -1,195 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Adventist Clubs - MWANZA MISHECK</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AJM AMOR | ADVENTIST CLUB RESOURCES | MIZCYR</title>
+    <meta name="description" content="AJM AMOR by MIZCYR — a mobile-friendly Adventist club resource site for Adventurer, Pathfinder, Master Guide and Honors materials.">
+    <meta name="keywords" content="AJM AMOR, Adventist, Adventurer, Pathfinder, Master Guide, Honors, AMOR, church resources, MIZCYR, Mwanza Misheck">
+    <meta name="author" content="Mwanza Misheck">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#071018">
+    <link rel="canonical" href="./">
+
+    <meta property="og:title" content="AJM AMOR | MIZCYR">
+    <meta property="og:description" content="A digital resource hub for Adventist club materials.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"WebSite",
+      "name":"AJM AMOR",
+      "alternateName":"AJM AMOR by MIZCYR",
+      "description":"Adventist club resource hub for Adventurer, Pathfinder, Master Guide and Honors materials.",
+      "author":{"@type":"Person","name":"Mwanza Misheck"}
+    }
+    </script>
 </head>
 
 <body>
 
-
-<div id="splash" class="splash-screen">
-<h1>JUNIOR ADVENTIST AMOR</h1>
-<h6>(MWANZA MISHECK)</h6>
+<div id="splash" class="splash-screen" aria-label="AJM AMOR loading screen">
+    <div class="splash-content">
+        <p class="eyebrow">ADVENTIST CLUB RESOURCE HUB</p>
+        <h1>AJM AMOR</h1>
+        <h4>BY MIZCYR</h4>
+        <h6>MWANZA MISHECK</h6>
+        <div class="loader"><span></span></div>
+    </div>
 </div>
-
 
 <div id="whatsappMessage" class="whatsapp-message" style="display:none;">
-<a href="https://wa.me/260765416606" target="_blank">
-Contact via WhatsApp
-</a>
+    <a href="https://wa.me/260765416606" target="_blank" rel="noopener">CONTACT VIA WHATSAPP</a>
 </div>
-
 
 <div id="mainContent" class="main-content" style="display:none;">
 
+    <header class="site-header">
+        <div class="brand">
+            <span class="brand-mark">AJM</span>
+            <div>
+                <strong>AJM AMOR</strong>
+                <small>BY MIZCYR</small>
+            </div>
+        </div>
 
-<div id="menuDots" class="menu" onclick="toggleMenu()">
-<div class="dots">
-<div class="dot"></div>
-<div class="dot"></div>
-<div class="dot"></div>
+        <!-- HAMBURGER MENU: keeps the original menu IDs/classes -->
+        <div id="menuDots" class="menu" onclick="toggleMenu()" role="button" tabindex="0" aria-label="Open menu" aria-expanded="false">
+            <div class="dots" aria-hidden="true">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </div>
+        </div>
+
+        <div id="menuOptions" class="menu-options" style="display:none;">
+            <div class="menu-profile">
+                <img src="images/Mish.jpg" alt="Mish - Mwanza Misheck" onerror="this.classList.add('image-missing')">
+                <div>
+                    <strong>MWANZA MISHECK</strong>
+                    <small>MIZCYR • BUILDER / CREATOR</small>
+                </div>
+            </div>
+
+            <div class="menu-section">
+                <span class="menu-label">ABOUT ME</span>
+                <p>I'M MISHECK, A YOUNG BUILDER USING WEB TECHNOLOGY TO MAKE USEFUL DIGITAL TOOLS FOR PEOPLE, CLUBS AND COMMUNITIES.</p>
+            </div>
+
+            <div class="menu-section">
+                <span class="menu-label">WHY THIS SITE?</span>
+                <p>AJM AMOR BRINGS CLUB RESOURCES INTO ONE SIMPLE PLACE, MAKING MATERIALS EASIER TO FIND, VIEW AND KEEP AVAILABLE ON A PHONE.</p>
+            </div>
+
+            <div class="menu-section">
+                <span class="menu-label">BENEFIT TO THE CHURCH</span>
+                <p>THE PLATFORM CAN REDUCE SEARCH TIME, IMPROVE ACCESS TO LEARNING MATERIALS, SUPPORT CLUB LEADERS AND HELP RESOURCES REACH MEMBERS MORE CONSISTENTLY.</p>
+            </div>
+
+            <div class="menu-section">
+                <span class="menu-label">THE EFFECT</span>
+                <p>A SMALL DIGITAL RESOURCE HUB CAN SUPPORT BETTER PREPARATION, SHARING AND CONTINUITY ACROSS CLUB ACTIVITIES.</p>
+            </div>
+
+            <div class="menu-actions">
+                <button type="button" onclick="showWhatsAppLink()">CONTACT</button>
+                <button type="button" onclick="shareSite()">SHARE</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-copy">
+                <span class="eyebrow">DESIGN • LEARN • GROW</span>
+                <h2>ONE PLACE.<br><span>FOUR PATHS.</span></h2>
+                <p>EXPLORE ADVENTURER, PATHFINDER, MASTER GUIDE AND HONORS RESOURCES FROM ONE MOBILE-FIRST HUB.</p>
+            </div>
+            <div class="hero-orbit" aria-hidden="true"><span>AJM</span></div>
+        </section>
+
+        <!-- MAIN MENU: GYM / FITNESS-STYLE DARK UI -->
+        <section id="mainGrids" class="grid-container" aria-label="Main resource menu">
+
+            <div class="grid-item gym-card" onclick="showContent('adv')">
+                <img src="images/adventurer.jpg" alt="Adventurer">
+                <div class="card-shade"></div>
+                <div class="card-content">
+                    <span class="card-kicker">01 • TRAIN</span>
+                    <span>ADVENTURER</span>
+                    <small>CORE • SKILLS • MANUAL</small>
+                </div>
+                <i class="card-arrow">↗</i>
+            </div>
+
+            <div class="grid-item gym-card" onclick="showContent('pf')">
+                <img src="images/pathfinder.jpg" alt="Pathfinder">
+                <div class="card-shade"></div>
+                <div class="card-content">
+                    <span class="card-kicker">02 • EXPLORE</span>
+                    <span>PATHFINDER</span>
+                    <small>PLEDGE • LAW • SONG • HONORS</small>
+                </div>
+                <i class="card-arrow">↗</i>
+            </div>
+
+            <div class="grid-item gym-card" onclick="showContent('MGContainer')">
+                <img src="images/masterguide.jpg" alt="Master Guide">
+                <div class="card-shade"></div>
+                <div class="card-content">
+                    <span class="card-kicker">03 • LEAD</span>
+                    <span>MASTER GUIDE</span>
+                    <small>HISTORY • CURRICULUM • MANUAL</small>
+                </div>
+                <i class="card-arrow">↗</i>
+            </div>
+        </section>
+
+        <!-- PATHFINDER: GREEN -->
+        <section id="pf" class="content-section section-page pf-section" style="display:none;">
+            <div class="section-heading">
+                <span class="section-number">02</span>
+                <div><p class="eyebrow">PATHFINDER</p><h2>PATHFINDER RESOURCES</h2></div>
+            </div>
+
+            <div class="pf-grid">
+                <div class="pf-item" onclick="openPledge()">PLEDGE <span>→</span></div>
+                <div class="pf-item" onclick="openHancock()">HISTORY HANCOCK <span>→</span></div>
+                <div class="pf-item" onclick="openSummary()">HISTORY SUMMARY <span>→</span></div>
+                <div class="pf-item" onclick="openLaw()">LAW <span>→</span></div>
+                <div class="pf-item" onclick="openSong()">SONG <span>→</span></div>
+                <div class="pf-item" onclick="showContent('honorsSection')">HONORS <span>→</span></div>
+            </div>
+
+            <button onclick="goBack()" class="back-btn">← BACK TO MAIN MENU</button>
+        </section>
+
+        <section id="honorsSection" class="content-section honors-page" style="display:none;">
+            <div class="section-heading">
+                <span class="section-number">02A</span>
+                <div><p class="eyebrow">PATHFINDER</p><h2>HONORS</h2></div>
+            </div>
+            <div id="honorsContainer"></div>
+            <button onclick="showContent('pf')" class="honors-back back-btn">← BACK TO PATHFINDER</button>
+        </section>
+
+        <!-- ADVENTURER: BLUE -->
+        <section id="adv" class="content-section section-page adv-section" style="display:none;">
+            <div class="section-heading">
+                <span class="section-number">01</span>
+                <div><p class="eyebrow">ADVENTURER</p><h2>ADVENTURER RESOURCES</h2></div>
+            </div>
+
+            <div class="adv-stack">
+                <div class="adv-core" onclick="openCoreOptions()"><span>01</span><strong>ADVENTURER CORE</strong><small>FOUNDATION MATERIAL</small><b>→</b></div>
+                <div class="adv-skills" onclick="openSkillsOptions()"><span>02</span><strong>ADVENTURER SKILLS</strong><small>SKILLS & ACTIVITIES</small><b>→</b></div>
+                <div class="adv-manual" onclick="openManualOptions()"><span>03</span><strong>ADVENTURER MANUAL</strong><small>REFERENCE MATERIAL</small><b>→</b></div>
+            </div>
+
+            <button onclick="goBack()" class="back-btn">← BACK TO MAIN MENU</button>
+        </section>
+
+        <!-- MASTER GUIDE: GOLD -->
+        <section id="MGContainer" class="content-section section-page mg-section" style="display:none;">
+            <div class="section-heading gold-heading">
+                <span class="section-number">03</span>
+                <div><p class="eyebrow">MASTER GUIDE</p><h2>MASTER GUIDE</h2></div>
+            </div>
+            <div id="mgGrid"></div>
+            <button onclick="goBack()" class="back-btn">← BACK TO MAIN MENU</button>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p class="motto">FOR THE LOVE OF CHRIST COMPELS US.</p>
+        <p>© 2026 MIZCYR • MWANZA MISHECK</p>
+        <p class="footer-note">BUILT AS A DIGITAL RESOURCE HUB FOR LEARNING, PREPARATION AND SHARING.</p>
+    </footer>
 </div>
+
+<!-- PATHFINDER POPUP -->
+<div id="pfPopup" class="popup" aria-hidden="true">
+    <div class="popup-box document-popup">
+        <button class="popup-close" onclick="closePfPopup()" aria-label="Close">×</button>
+        <span class="popup-section-label pf-label">PATHFINDER</span>
+        <h3 id="pfPopupTitle">PATHFINDER DOCUMENT</h3>
+        <div class="document-viewer"><iframe id="pfFrame" title="Pathfinder PDF viewer"></iframe></div>
+        <div class="popup-actions">
+            <a id="pfView" class="popup-btn secondary" target="_blank" rel="noopener">OPEN IN NEW TAB</a>
+            <a id="pfDownload" class="popup-btn primary" download>DOWNLOAD</a>
+            <button class="popup-btn cancel" onclick="closePfPopup()">CANCEL</button>
+        </div>
+    </div>
 </div>
-
-<div id="menuOptions" class="menu-options" style="display:none;">
-<ul>
-<li><a href="javascript:void(0);" onclick="showWhatsAppLink()">WhatsApp</a></li>
-<li><a href="#">Share</a></li>
-</ul>
-</div>
-
-<!-- MAIN MENU GRID -->
-<div id="mainGrids" class="grid-container">
-
-<div class="grid-item" onclick="showContent('adv')">
-<img src="images/adventurer.jpg" alt="Adventurer">
-<span>Adventurer</span>
-</div>
-
-<div class="grid-item" onclick="showContent('pf')">
-<img src="images/pathfinder.jpg" alt="Pathfinder">
-<span>Pathfinder</span>
-</div>
-
-
-  <div class="grid-item" onclick="showContent('MGContainer')">
-<img src="images/masterguide.jpg" alt="Master Guide">
-<span>Master Guide</span>
-</div>
-
-</div>
-
-
-
-<div id="pf" class="content-section" style="display:none;">
-
-<h2>Pathfinder Section</h2>
-
-<div class="pf-grid">
-
-<div  class="pf-item" onclick="openPledge()">Pledge</div>
-
-<div class="pf-item" onclick="openHancock()">History Hancock</div>
-
-<div class="pf-item" onclick="openSummary()">History Summary</div>
-
-<div class="pf-item" onclick="openLaw()">Law</div>
-
-<div class="pf-item" onclick="openSong()">Song</div>
-<div class="grid-item" onclick="showContent('honorsSection')">HONORS</div>
-
-</div>
-
-<button onclick="goBack()" class="back-btn">Back</button>
-
-</div>
-<div id="pfPopup" class="popup">
-<div class="popup-box">
-
-<h3>Pathfinder Document</h3>
-
-<a id="pfView" target="_blank">
-<button>View Online</button>
-</a>
-
-<a id="pfDownload">
-<button>Download</button>
-</a>
-
-<button onclick="closePfPopup()">Cancel</button>
-
-</div>
-</div>
-
-
-
-
-
-<div id="honorsSection" class="content-section honors-page">
-
-  <h2>Pathfinder Honors</h2>
-
-  <div id="honorsContainer"></div>
-
-  <button onclick="showContent('pf')" class="honors-back">Back</button>
-
-</div>
-
-<!-- ADVENTURER SECTION -->
-<div id="adv" class="content-section" style="display:none;">
-
-<h2>Adventurer Section</h2>
-
-<div class="adv-core" onclick="openCoreOptions()">ADVENTURER CORE</div>
-
-<div class="adv-skills" onclick="openSkillsOptions()">ADVENTURER SKILLS</div>
-
-<div class="adv-manual" onclick="openManualOptions()">ADVENTURER MANUAL</div>
-
-<button onclick="goBack()" class="back-btn">Back</button>
-
-</div>
-
-
-
-
 
 <!-- ADVENTURER POPUPS -->
-
-<div id="corePopup" class="popup">
-<div class="popup-box">
-<h3>Adventurer Core</h3>
-<a href="pdf/adventurer/core.pdf" target="_blank"><button>View Online</button></a>
-<a href="pdf/adventurer/core.pdf" download><button>Download</button></a>
-<button onclick="closeCoreOptions()">Cancel</button>
-</div>
-</div>
-
-<div id="skillsPopup" class="popup">
-<div class="popup-box">
-<h3>Adventurer Skills</h3>
-<a href="pdf/adventurer/skills.pdf" target="_blank"><button>View Online</button></a>
-<a href="pdf/adventurer/skills.pdf" download><button>Download</button></a>
-<button onclick="closeSkillsOptions()">Cancel</button>
-</div>
+<div id="corePopup" class="popup" aria-hidden="true">
+    <div class="popup-box document-popup">
+        <button class="popup-close" onclick="closeCoreOptions()">×</button>
+        <span class="popup-section-label adv-label">ADVENTURER</span><h3>ADVENTURER CORE</h3>
+        <div class="document-viewer"><iframe src="pdf/adventurer/core.pdf" title="Adventurer Core PDF viewer"></iframe></div>
+        <div class="popup-actions"><a href="pdf/adventurer/core.pdf" class="popup-btn secondary" target="_blank" rel="noopener">OPEN IN NEW TAB</a><a href="pdf/adventurer/core.pdf" class="popup-btn primary" download>DOWNLOAD</a><button onclick="closeCoreOptions()" class="popup-btn cancel">CANCEL</button></div>
+    </div>
 </div>
 
-<div id="manualPopup" class="popup">
-<div class="popup-box">
-<h3>Adventurer Manual</h3>
-<a href="pdf/adventurer/manual.pdf" target="_blank"><button>View Online</button></a>
-<a href="pdf/adventurer/manual.pdf" download><button>Download</button></a>
-<button onclick="closeManualOptions()">Cancel</button>
-</div>
-</div>
-
-
-
-
-<div id="MGContainer" class="content-section" style="display:none;">
-
-  <h2>Master Guide</h2>
-
-  <div id="mgGrid"></div>
-
-  <button onclick="goBack()" class="back-btn">Back</button>
-
+<div id="skillsPopup" class="popup" aria-hidden="true">
+    <div class="popup-box document-popup">
+        <button class="popup-close" onclick="closeSkillsOptions()">×</button>
+        <span class="popup-section-label adv-label">ADVENTURER</span><h3>ADVENTURER SKILLS</h3>
+        <div class="document-viewer"><iframe src="pdf/adventurer/skills.pdf" title="Adventurer Skills PDF viewer"></iframe></div>
+        <div class="popup-actions"><a href="pdf/adventurer/skills.pdf" class="popup-btn secondary" target="_blank" rel="noopener">OPEN IN NEW TAB</a><a href="pdf/adventurer/skills.pdf" class="popup-btn primary" download>DOWNLOAD</a><button onclick="closeSkillsOptions()" class="popup-btn cancel">CANCEL</button></div>
+    </div>
 </div>
 
-<!-- Motto -->
-<p class="motto">
-For the love of Christ compels us.
-</p>
+<div id="manualPopup" class="popup" aria-hidden="true">
+    <div class="popup-box document-popup">
+        <button class="popup-close" onclick="closeManualOptions()">×</button>
+        <span class="popup-section-label adv-label">ADVENTURER</span><h3>ADVENTURER MANUAL</h3>
+        <div class="document-viewer"><iframe src="pdf/adventurer/manual.pdf" title="Adventurer Manual PDF viewer"></iframe></div>
+        <div class="popup-actions"><a href="pdf/adventurer/manual.pdf" class="popup-btn secondary" target="_blank" rel="noopener">OPEN IN NEW TAB</a><a href="pdf/adventurer/manual.pdf" class="popup-btn primary" download>DOWNLOAD</a><button onclick="closeManualOptions()" class="popup-btn cancel">CANCEL</button></div>
+    </div>
+</div>
 
+<!-- MASTER GUIDE POPUP -->
+<div id="mgPopup" class="popup" aria-hidden="true">
+    <div class="popup-box document-popup">
+        <button class="popup-close" onclick="closeMgPopup()">×</button>
+        <span class="popup-section-label mg-label">MASTER GUIDE</span>
+        <h3 id="mgPopupTitle">MASTER GUIDE DOCUMENT</h3>
+        <div class="document-viewer"><iframe id="mgFrame" title="Master Guide PDF viewer"></iframe></div>
+        <div class="popup-actions"><a id="mgView" class="popup-btn secondary" target="_blank" rel="noopener">OPEN IN NEW TAB</a><a id="mgDownload" class="popup-btn primary" download>DOWNLOAD</a><button onclick="closeMgPopup()" class="popup-btn cancel">CANCEL</button></div>
+    </div>
+</div>
 
+<!-- HONORS POPUP -->
+<div id="honorPopup" class="popup" aria-hidden="true">
+    <div class="popup-box document-popup">
+        <button class="popup-close" onclick="closeHonorPopup()">×</button>
+        <span class="popup-section-label pf-label">PATHFINDER • HONORS</span>
+        <h3 id="honorPopupTitle">HONOR</h3>
+        <div class="document-viewer"><iframe id="honorFrame" title="Honor PDF viewer"></iframe></div>
+        <div class="popup-actions"><a id="honorView" class="popup-btn secondary" target="_blank" rel="noopener">OPEN IN NEW TAB</a><a id="honorDownload" class="popup-btn primary" download>DOWNLOAD</a><button onclick="closeHonorPopup()" class="popup-btn cancel">CANCEL</button></div>
+    </div>
+</div>
 
-© 2026 Misheck mwanza. All rights reserved.
-This code may be used for viewing or learning purposes only.
-No copying, modification, or redistribution allowed.
 <script src="main.js"></script>
-
 </body>
 </html>
