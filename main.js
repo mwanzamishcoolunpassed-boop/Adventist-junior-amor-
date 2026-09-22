@@ -3,30 +3,31 @@
 // Keep all original IDs/classes and file
 // paths consistent with the supplied project.
 // =========================================
-document.addEventListener("DOMContentLoaded", function () {
+(function () {
 
-    // SPLASH
-    const splash = document.getElementById("splash");
-    const mainContent = document.getElementById("mainContent");
+    function hideSplash() {
+        const splash = document.getElementById("splash");
 
-    setTimeout(function () {
+        if (!splash) return;
 
-        if (splash) {
+        setTimeout(function () {
             splash.style.opacity = "0";
             splash.style.visibility = "hidden";
 
             setTimeout(function () {
                 splash.style.display = "none";
             }, 700);
-        }
 
-        if (mainContent) {
-            mainContent.style.display = "block";
-        }
+        }, 1800);
+    }
 
-    }, 1800);
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", hideSplash);
+    } else {
+        hideSplash();
+    }
 
-});
+})();
 
 
 
