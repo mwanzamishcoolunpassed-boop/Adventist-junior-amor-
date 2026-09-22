@@ -27,21 +27,33 @@ document.addEventListener("DOMContentLoaded", function () {
         mgGrid.innerHTML = "";
 
         const MasterGuideFiles = [
-            "history",
-            "curriculum",
-            "african",
-            "manual"
+            {
+                file: "history",
+                title: "history"
+            },
+            {
+                file: "curriculum",
+                title: "curriculum"
+            },
+            {
+                file: "african",
+                title: "african"
+            },
+            {
+                file: "masterguide-manual",
+                title: "manual"
+            }
         ];
 
-        MasterGuideFiles.forEach(function (file) {
+        MasterGuideFiles.forEach(function (item) {
             const grid = document.createElement("div");
             grid.className = "grid";
-            grid.innerText = file.toUpperCase();
+            grid.innerText = item.title.toUpperCase();
 
             grid.onclick = function () {
                 openMgDocument(
-                    "pdf/masterguide/" + file + ".pdf",
-                    file.toUpperCase()
+                    item.file + ".pdf",
+                    item.title.toUpperCase()
                 );
             };
 
@@ -60,127 +72,127 @@ document.addEventListener("DOMContentLoaded", function () {
             {
                 title: "First Aid",
                 img: "images/honors/first.jpg",
-                pdf: "pdf/hs/fd.pdf"
+                pdf: "fd.pdf"
             },
             {
                 title: "Bully Prevention",
                 img: "images/honors/bully.jpg",
-                pdf: "pdf/hs/bu.pdf"
+                pdf: "bu.pdf"
             },
             {
                 title: "Flags",
                 img: "images/honors/flags.jpg",
-                pdf: "pdf/hs/flags.pdf"
+                pdf: "flags.pdf"
             },
             {
                 title: "Prophets and Prophecy",
                 img: "images/honors/prophecy.jpg",
-                pdf: "pdf/hs/pp.pdf"
+                pdf: "pp.pdf"
             },
             {
                 title: "Literature Evangelism",
                 img: "images/honors/literature.jpg",
-                pdf: "pdf/hs/lit.pdf"
+                pdf: "lit.pdf"
             },
             {
                 title: "Judges and Kings",
                 img: "images/honors/judges.jpg",
-                pdf: "pdf/hs/jud.pdf"
+                pdf: "jud.pdf"
             },
             {
                 title: "Stars",
                 img: "images/honors/stars.jpg",
-                pdf: "pdf/hs/sts.pdf"
+                pdf: "sts.pdf"
             },
             {
                 title: "Peacemaking",
                 img: "images/honors/peace.jpg",
-                pdf: "pdf/hs/peace.pdf"
+                pdf: "peace.pdf"
             },
             {
                 title: "Mammals",
                 img: "images/honors/mammals.jpg",
-                pdf: "pdf/hs/mmm.pdf"
+                pdf: "mmm.pdf"
             },
             {
                 title: "Poultry and Poultry Raising",
                 img: "images/honors/poultry.jpg",
-                pdf: "pdf/hs/ppr.pdf"
+                pdf: "ppr.pdf"
             },
             {
                 title: "Swimming",
                 img: "images/honors/swimming.jpg",
-                pdf: "pdf/hs/sng.pdf"
+                pdf: "sng.pdf"
             },
             {
                 title: "Preaching",
                 img: "images/honors/preaching.jpg",
-                pdf: "pdf/hs/prg.pdf"
+                pdf: "prg.pdf"
             },
             {
                 title: "Stewardship",
                 img: "images/honors/stewardship.jpg",
-                pdf: "pdf/hs/stp.pdf"
+                pdf: "stp.pdf"
             },
             {
                 title: "Beekeeping",
                 img: "images/honors/beekeeping.jpg",
-                pdf: "pdf/hs/beekeeping.pdf"
+                pdf: "beekeeping.pdf"
             },
             {
                 title: "Reptiles and Amphibians",
                 img: "images/honors/reptiles.jpg",
-                pdf: "pdf/hs/ar.pdf"
+                pdf: "ar.pdf"
             },
             {
                 title: "Alive Bible",
                 img: "images/honors/bible.jpg",
-                pdf: "pdf/hs/ab.pdf"
+                pdf: "ab.pdf"
             },
             {
                 title: "Baking",
                 img: "images/honors/baking.jpg",
-                pdf: "pdf/hs/baking.pdf"
+                pdf: "baking.pdf"
             },
             {
                 title: "Drill and Marching",
                 img: "images/honors/drill.jpg",
-                pdf: "pdf/hs/drill.pdf"
+                pdf: "drill.pdf"
             },
             {
                 title: "Knot Tying",
                 img: "images/honors/knots.jpg",
-                pdf: "pdf/hs/knots.pdf"
+                pdf: "knots.pdf"
             },
             {
                 title: "Birds",
                 img: "images/honors/birds.jpg",
-                pdf: "pdf/hs/birds.pdf"
+                pdf: "birds.pdf"
             },
             {
                 title: "Cats and Dogs of the Wild",
                 img: "images/honors/cat.jpg",
-                pdf: "pdf/hs/catsdogs.pdf"
+                pdf: "catsdogs.pdf"
             },
             {
                 title: "Fire Building",
                 img: "images/honors/fire.jpg",
-                pdf: "pdf/hs/fb.pdf"
+                pdf: "fb.pdf"
             },
             {
                 title: "Campcraft",
                 img: "images/honors/camp.jpg",
-                pdf: "pdf/hs/campcraft.pdf"
+                pdf: "campcraft.pdf"
             },
             {
                 title: "Chairmanship",
                 img: "images/honors/chair.jpg",
-                pdf: "pdf/hs/chairmanship.pdf"
+                pdf: "chairmanship.pdf"
             },
             {
                 title: "Sanctuary",
                 img: "images/honors/sanctuary.jpg",
-                pdf: "pdf/hs/sanctuary.pdf"
+                pdf: "sanctuary.pdf"
             }
         ];
 
@@ -205,6 +217,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
 
 // =========================================
 // MENU
@@ -233,6 +246,7 @@ function toggleMenu() {
     }
 }
 
+
 // Keyboard support for hamburger
 document.addEventListener("keydown", function (event) {
 
@@ -246,6 +260,7 @@ document.addEventListener("keydown", function (event) {
         toggleMenu();
     }
 });
+
 
 // Close menu when tapping outside it
 document.addEventListener("click", function (event) {
@@ -272,6 +287,7 @@ document.addEventListener("click", function (event) {
     }
 });
 
+
 // =========================================
 // WHATSAPP / SHARE
 // =========================================
@@ -289,6 +305,7 @@ function showWhatsAppLink() {
         message.style.display = "none";
     }, 5000);
 }
+
 
 async function shareSite() {
 
@@ -320,6 +337,7 @@ async function shareSite() {
 
     }
 }
+
 
 // =========================================
 // SHOW SECTIONS
@@ -357,6 +375,7 @@ function showContent(sectionId) {
     }
 }
 
+
 function goBack() {
 
     const sections =
@@ -381,6 +400,7 @@ function goBack() {
     });
 }
 
+
 // =========================================
 // POPUP HELPERS
 // =========================================
@@ -401,6 +421,7 @@ function showPopup(id) {
 
     document.body.style.overflow = "hidden";
 }
+
 
 function hidePopup(id) {
 
@@ -426,6 +447,7 @@ function hidePopup(id) {
     }
 }
 
+
 // =========================================
 // ADVENTURER POPUPS
 // =========================================
@@ -434,25 +456,33 @@ function openCoreOptions() {
     showPopup("corePopup");
 }
 
+
 function closeCoreOptions() {
     hidePopup("corePopup");
 }
+
 
 function openSkillsOptions() {
     showPopup("skillsPopup");
 }
 
+
 function closeSkillsOptions() {
     hidePopup("skillsPopup");
 }
+
 
 function openManualOptions() {
     showPopup("manualPopup");
 }
 
+
 function closeManualOptions() {
     hidePopup("manualPopup");
-}// =========================================
+}
+
+
+// =========================================
 // PATHFINDER POPUP
 // =========================================
 
@@ -488,45 +518,51 @@ function openPfDocument(
     showPopup("pfPopup");
 }
 
+
 function openPledge() {
 
     openPfDocument(
-        "pdf/pl.pdf",
+        "pl.pdf",
         "PLEDGE"
     );
 }
 
+
 function openHancock() {
 
     openPfDocument(
-        "pdf/historyh.pdf",
+        "historyh.pdf",
         "HISTORY HANCOCK"
     );
 }
 
+
 function openSummary() {
 
     openPfDocument(
-        "pdf/history-summary.pdf",
+        "history-summary.pdf",
         "HISTORY SUMMARY"
     );
 }
 
+
 function openLaw() {
 
     openPfDocument(
-        "pdf/lw.pdf",
+        "lw.pdf",
         "LAW"
     );
 }
 
+
 function openSong() {
 
     openPfDocument(
-        "pdf/sg.pdf",
+        "sg.pdf",
         "SONG"
     );
 }
+
 
 function closePfPopup() {
 
@@ -539,6 +575,7 @@ function closePfPopup() {
 
     hidePopup("pfPopup");
 }
+
 
 // =========================================
 // MASTER GUIDE POPUP
@@ -573,6 +610,7 @@ function openMgDocument(file, title) {
     showPopup("mgPopup");
 }
 
+
 function closeMgPopup() {
 
     const frame =
@@ -584,6 +622,7 @@ function closeMgPopup() {
 
     hidePopup("mgPopup");
 }
+
 
 // =========================================
 // HONORS POPUP
@@ -618,6 +657,7 @@ function openHonorDocument(file, title) {
     showPopup("honorPopup");
 }
 
+
 function closeHonorPopup() {
 
     const frame =
@@ -629,6 +669,7 @@ function closeHonorPopup() {
 
     hidePopup("honorPopup");
 }
+
 
 // =========================================
 // UNIVERSAL POPUP BEHAVIOUR
@@ -664,6 +705,7 @@ document.addEventListener("click", function (event) {
         }
     }
 });
+
 
 document.addEventListener("keydown", function (event) {
 
