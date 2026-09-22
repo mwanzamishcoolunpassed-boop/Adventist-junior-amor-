@@ -3,7 +3,6 @@
 // Keep all original IDs/classes and file
 // paths consistent with the supplied project.
 // =========================================
-
 document.addEventListener("DOMContentLoaded", function () {
 
     // SPLASH
@@ -11,15 +10,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const mainContent = document.getElementById("mainContent");
 
     setTimeout(function () {
+
         if (splash) {
             splash.style.opacity = "0";
             splash.style.visibility = "hidden";
-            setTimeout(() => splash.style.display = "none", 700);
+
+            setTimeout(function () {
+                splash.style.display = "none";
+            }, 700);
         }
+
         if (mainContent) {
             mainContent.style.display = "block";
         }
+
     }, 1800);
+
+});
+
+
 
     // MASTER GUIDE
     const mgGrid = document.getElementById("mgGrid");
