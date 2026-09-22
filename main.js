@@ -3,73 +3,68 @@
 // Keep all original IDs/classes and file
 // paths consistent with the supplied project.
 // =========================================
-(function () {
+document.addEventListener("DOMContentLoaded", function () {
 
-    function hideSplash() {
-        const splash = document.getElementById("splash");
+    // SPLASH
+    const splash = document.getElementById("splash");
+    const mainContent = document.getElementById("mainContent");
 
-        if (!splash) return;
-
-        setTimeout(function () {
+    setTimeout(function () {
+        if (splash) {
             splash.style.opacity = "0";
             splash.style.visibility = "hidden";
+            setTimeout(() => splash.style.display = "none", 700);
+        }
+        if (mainContent) {
+            mainContent.style.display = "block";
+        }
+    }, 1800);
 
-            setTimeout(function () {
-                splash.style.display = "none";
-            }, 700);
-
-        }, 1800);
-    }
-
-    if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", hideSplash);
-    } else {
-        hideSplash();
-    }
-
-})();
+});
 
 
 
-    // MASTER GUIDE
-    const mgGrid = document.getElementById("mgGrid");
-    if (mgGrid) {
-        mgGrid.innerHTML = "";
+// MASTER GUIDE
+const mgGrid = document.getElementById("mgGrid");
 
-        const MasterGuideFiles = [
-            {
-                file: "history",
-                title: "history"
-            },
-            {
-                file: "curriculum",
-                title: "curriculum"
-            },
-            {
-                file: "african",
-                title: "african"
-            },
-            {
-                file: "masterguide-manual",
-                title: "manual"
-            }
-        ];
+if (mgGrid) {
+    mgGrid.innerHTML = "";
 
-        MasterGuideFiles.forEach(function (item) {
-            const grid = document.createElement("div");
-            grid.className = "grid";
-            grid.innerText = item.title.toUpperCase();
+    const MasterGuideFiles = [
+        {
+            file: "history",
+            title: "history"
+        },
+        {
+            file: "curriculum",
+            title: "curriculum"
+        },
+        {
+            file: "african",
+            title: "african"
+        },
+        {
+            file: "masterguide-manual",
+            title: "manual"
+        }
+    ];
 
-            grid.onclick = function () {
-                openMgDocument(
-                    item.file + ".pdf",
-                    item.title.toUpperCase()
-                );
-            };
+    MasterGuideFiles.forEach(function (item) {
+        const grid = document.createElement("div");
+        grid.className = "grid";
+        grid.innerText = item.title.toUpperCase();
 
-            mgGrid.appendChild(grid);
-        });
-    }
+        grid.onclick = function () {
+            openMgDocument(
+                item.file + ".pdf",
+                item.title.toUpperCase()
+            );
+        };
+
+        mgGrid.appendChild(grid);
+    });
+}
+
 
     // HONORS
     const honorsContainer =
