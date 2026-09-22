@@ -99,7 +99,7 @@
     <div class="splash-content">
 
         <p class="eyebrow">
-            ADVENTIST JUNIOR MaiNISTR135
+            ADVENTIST JUNIOR M1NISTR135
         </p>
 
         <h1>
@@ -945,4 +945,245 @@
         <div class="document-viewer">
 
             <iframe src="skills.pdf"
-              
+
+                <iframe src="skills.pdf"
+        title="Adventurer Skills PDF viewer">
+</iframe>
+
+</div>
+
+<div class="popup-actions">
+
+    <a href="skills.pdf"
+       class="popup-btn secondary"
+       target="_blank"
+       rel="noopener">
+
+        OPEN IN NEW TAB
+
+    </a>
+
+    <a href="skills.pdf"
+       class="popup-btn primary"
+       download>
+
+        DOWNLOAD
+
+    </a>
+
+    <button onclick="closeSkillsOptions()"
+            class="popup-btn cancel">
+
+        CANCEL
+
+    </button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     ADVENTURER MANUAL POPUP
+========================= -->
+
+<div id="manualPopup"
+     class="popup"
+     aria-hidden="true">
+
+    <div class="popup-box document-popup">
+
+        <button class="popup-close"
+                onclick="closeManualOptions()">
+
+            ×
+
+        </button>
+
+        <span class="popup-section-label adv-label">
+            ADVENTURER
+        </span>
+
+        <h3>
+            ADVENTURER MANUAL
+        </h3>
+
+        <div class="document-viewer">
+
+            <iframe src="manual.pdf"
+                    title="Adventurer Manual PDF viewer">
+            </iframe>
+
+        </div>
+
+        <div class="popup-actions">
+
+            <a href="manual.pdf"
+               class="popup-btn secondary"
+               target="_blank"
+               rel="noopener">
+
+                OPEN IN NEW TAB
+
+            </a>
+
+            <a href="manual.pdf"
+               class="popup-btn primary"
+               download>
+
+                DOWNLOAD
+
+            </a>
+
+            <button onclick="closeManualOptions()"
+                    class="popup-btn cancel">
+
+                CANCEL
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     MASTER GUIDE POPUP
+========================= -->
+
+<div id="mgPopup"
+     class="popup"
+     aria-hidden="true">
+
+    <div class="popup-box document-popup">
+
+        <button class="popup-close"
+                onclick="closeMgPopup()">
+
+            ×
+
+        </button>
+
+        <span class="popup-section-label mg-label">
+            MASTER GUIDE
+        </span>
+
+        <h3 id="mgPopupTitle">
+            MASTER GUIDE DOCUMENT
+        </h3>
+
+        <div class="document-viewer">
+
+            <iframe id="mgFrame"
+                    title="Master Guide PDF viewer">
+            </iframe>
+
+        </div>
+
+        <div class="popup-actions">
+
+            <a id="mgView"
+               class="popup-btn secondary"
+               target="_blank"
+               rel="noopener">
+
+                OPEN IN NEW TAB
+
+            </a>
+
+            <a id="mgDownload"
+               class="popup-btn primary"
+               download>
+
+                DOWNLOAD
+
+            </a>
+
+            <button onclick="closeMgPopup()"
+                    class="popup-btn cancel">
+
+                CANCEL
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     HONORS POPUP
+========================= -->
+
+<div id="honorPopup"
+     class="popup"
+     aria-hidden="true">
+
+    <div class="popup-box document-popup">
+
+        <button class="popup-close"
+                onclick="closeHonorPopup()">
+
+            ×
+
+        </button>
+
+        <span class="popup-section-label pf-label">
+            PATHFINDER • HONORS
+        </span>
+
+        <h3 id="honorPopupTitle">
+            HONOR
+        </h3>
+
+        <div class="document-viewer">
+
+            <iframe id="honorFrame"
+                    title="Honor PDF viewer">
+            </iframe>
+
+        </div>
+
+        <div class="popup-actions">
+
+            <a id="honorView"
+               class="popup-btn secondary"
+               target="_blank"
+               rel="noopener">
+
+                OPEN IN NEW TAB
+
+            </a>
+
+            <a id="honorDownload"
+               class="popup-btn primary"
+               download>
+
+                DOWNLOAD
+
+            </a>
+
+            <button onclick="closeHonorPopup()"
+                    class="popup-btn cancel">
+
+                CANCEL
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="main.js"></script>
+
+</body>
+    </html>
