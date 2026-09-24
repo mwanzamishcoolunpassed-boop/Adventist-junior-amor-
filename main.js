@@ -3,74 +3,96 @@
 // Keep all original IDs/classes and file
 // paths consistent with the supplied project.
 // =========================================
+
 document.addEventListener("DOMContentLoaded", function () {
 
+    // =========================================
     // SPLASH
+    // =========================================
+
     const splash = document.getElementById("splash");
     const mainContent = document.getElementById("mainContent");
 
     setTimeout(function () {
+
         if (splash) {
             splash.style.opacity = "0";
             splash.style.visibility = "hidden";
-            setTimeout(() => splash.style.display = "none", 700);
+
+            setTimeout(function () {
+                splash.style.display = "none";
+            }, 700);
         }
+
         if (mainContent) {
             mainContent.style.display = "block";
         }
+
     }, 1800);
 
-});
+
+    // =========================================
+    // MASTER GUIDE
+    // =========================================
+
+    const mgGrid = document.getElementById("mgGrid");
+
+    if (mgGrid) {
+
+        mgGrid.innerHTML = "";
+
+        const MasterGuideFiles = [
+            {
+                file: "history",
+                title: "history"
+            },
+            {
+                file: "curriculum",
+                title: "curriculum"
+            },
+            {
+                file: "african",
+                title: "african"
+            },
+            {
+                file: "masterguide-manual",
+                title: "manual"
+            }
+        ];
+
+        MasterGuideFiles.forEach(function (item) {
+
+            const grid = document.createElement("div");
+
+            grid.className = "grid";
+
+            grid.innerText =
+                item.title.toUpperCase();
+
+            grid.onclick = function () {
+
+                openMgDocument(
+                    item.file + ".pdf",
+                    item.title.toUpperCase()
+                );
+
+            };
+
+            mgGrid.appendChild(grid);
+
+        });
+    }
 
 
-
-// MASTER GUIDE
-const mgGrid = document.getElementById("mgGrid");
-
-if (mgGrid) {
-    mgGrid.innerHTML = "";
-
-    const MasterGuideFiles = [
-        {
-            file: "history",
-            title: "history"
-        },
-        {
-            file: "curriculum",
-            title: "curriculum"
-        },
-        {
-            file: "african",
-            title: "african"
-        },
-        {
-            file: "masterguide-manual",
-            title: "manual"
-        }
-    ];
-
-    MasterGuideFiles.forEach(function (item) {
-        const grid = document.createElement("div");
-        grid.className = "grid";
-        grid.innerText = item.title.toUpperCase();
-
-        grid.onclick = function () {
-            openMgDocument(
-                item.file + ".pdf",
-                item.title.toUpperCase()
-            );
-        };
-
-        mgGrid.appendChild(grid);
-    });
-}
-
-
+    // =========================================
     // HONORS
+    // =========================================
+
     const honorsContainer =
         document.getElementById("honorsContainer");
 
     if (honorsContainer) {
+
         honorsContainer.innerHTML = "";
 
         const honors = [
@@ -202,25 +224,33 @@ if (mgGrid) {
         ];
 
         honors.forEach(function (honor) {
-            const card = document.createElement("div");
 
-            card.className = "honor-card";
+            const card =
+                document.createElement("div");
+
+            card.className =
+                "honor-card";
 
             card.style.backgroundImage =
                 "url('" + honor.img + "')";
 
-            card.innerText = honor.title.toUpperCase();
+            card.innerText =
+                honor.title.toUpperCase();
 
             card.onclick = function () {
+
                 openHonorDocument(
                     honor.pdf,
                     honor.title.toUpperCase()
                 );
+
             };
 
             honorsContainer.appendChild(card);
+
         });
     }
+
 });
 
 
@@ -229,6 +259,7 @@ if (mgGrid) {
 // =========================================
 
 function toggleMenu() {
+
     const menuOptions =
         document.getElementById("menuOptions");
 
@@ -244,15 +275,20 @@ function toggleMenu() {
         isOpen ? "none" : "block";
 
     if (menuButton) {
+
         menuButton.setAttribute(
             "aria-expanded",
             String(!isOpen)
         );
+
     }
 }
 
 
+// =========================================
 // Keyboard support for hamburger
+// =========================================
+
 document.addEventListener("keydown", function (event) {
 
     const menuButton =
@@ -264,10 +300,14 @@ document.addEventListener("keydown", function (event) {
     ) {
         toggleMenu();
     }
+
 });
 
 
+// =========================================
 // Close menu when tapping outside it
+// =========================================
+
 document.addEventListener("click", function (event) {
 
     const menu =
@@ -283,13 +323,16 @@ document.addEventListener("click", function (event) {
         !menu.contains(event.target) &&
         !button.contains(event.target)
     ) {
+
         menu.style.display = "none";
 
         button.setAttribute(
             "aria-expanded",
             "false"
         );
+
     }
+
 });
 
 
@@ -307,8 +350,11 @@ function showWhatsAppLink() {
     message.style.display = "block";
 
     setTimeout(function () {
+
         message.style.display = "none";
+
     }, 5000);
+
 }
 
 
@@ -333,6 +379,7 @@ async function shareSite() {
             );
 
             alert("LINK COPIED.");
+
         }
 
     } catch (error) {
@@ -341,6 +388,7 @@ async function shareSite() {
         // No action needed.
 
     }
+
 }
 
 
@@ -356,14 +404,18 @@ function showContent(sectionId) {
         );
 
     sections.forEach(function (section) {
+
         section.style.display = "none";
+
     });
 
     const mainGrids =
         document.getElementById("mainGrids");
 
     if (mainGrids) {
+
         mainGrids.style.display = "none";
+
     }
 
     const target =
@@ -377,7 +429,9 @@ function showContent(sectionId) {
             top: 0,
             behavior: "smooth"
         });
+
     }
+
 }
 
 
@@ -389,20 +443,25 @@ function goBack() {
         );
 
     sections.forEach(function (section) {
+
         section.style.display = "none";
+
     });
 
     const mainGrids =
         document.getElementById("mainGrids");
 
     if (mainGrids) {
+
         mainGrids.style.display = "grid";
+
     }
 
     window.scrollTo({
         top: 0,
         behavior: "smooth"
     });
+
 }
 
 
@@ -425,6 +484,7 @@ function showPopup(id) {
     );
 
     document.body.style.overflow = "hidden";
+
 }
 
 
@@ -448,8 +508,11 @@ function hidePopup(id) {
         );
 
     if (!openPopup) {
+
         document.body.style.overflow = "";
+
     }
+
 }
 
 
@@ -458,32 +521,44 @@ function hidePopup(id) {
 // =========================================
 
 function openCoreOptions() {
+
     showPopup("corePopup");
+
 }
 
 
 function closeCoreOptions() {
+
     hidePopup("corePopup");
+
 }
 
 
 function openSkillsOptions() {
+
     showPopup("skillsPopup");
+
 }
 
 
 function closeSkillsOptions() {
+
     hidePopup("skillsPopup");
+
 }
 
 
 function openManualOptions() {
+
     showPopup("manualPopup");
+
 }
 
 
 function closeManualOptions() {
+
     hidePopup("manualPopup");
+
 }
 
 
@@ -517,10 +592,13 @@ function openPfDocument(
     frame.src = file;
 
     if (titleBox) {
+
         titleBox.textContent = title;
+
     }
 
     showPopup("pfPopup");
+
 }
 
 
@@ -530,6 +608,7 @@ function openPledge() {
         "pl.pdf",
         "PLEDGE"
     );
+
 }
 
 
@@ -539,6 +618,7 @@ function openHancock() {
         "historyh.pdf",
         "HISTORY HANCOCK"
     );
+
 }
 
 
@@ -548,6 +628,7 @@ function openSummary() {
         "history-summary.pdf",
         "HISTORY SUMMARY"
     );
+
 }
 
 
@@ -557,6 +638,7 @@ function openLaw() {
         "lw.pdf",
         "LAW"
     );
+
 }
 
 
@@ -566,6 +648,7 @@ function openSong() {
         "sg.pdf",
         "SONG"
     );
+
 }
 
 
@@ -575,10 +658,13 @@ function closePfPopup() {
         document.getElementById("pfFrame");
 
     if (frame) {
+
         frame.src = "about:blank";
+
     }
 
     hidePopup("pfPopup");
+
 }
 
 
@@ -609,10 +695,13 @@ function openMgDocument(file, title) {
     frame.src = file;
 
     if (titleBox) {
+
         titleBox.textContent = title;
+
     }
 
     showPopup("mgPopup");
+
 }
 
 
@@ -622,10 +711,13 @@ function closeMgPopup() {
         document.getElementById("mgFrame");
 
     if (frame) {
+
         frame.src = "about:blank";
+
     }
 
     hidePopup("mgPopup");
+
 }
 
 
@@ -656,10 +748,13 @@ function openHonorDocument(file, title) {
     frame.src = file;
 
     if (titleBox) {
+
         titleBox.textContent = title;
+
     }
 
     showPopup("honorPopup");
+
 }
 
 
@@ -669,10 +764,13 @@ function closeHonorPopup() {
         document.getElementById("honorFrame");
 
     if (frame) {
+
         frame.src = "about:blank";
+
     }
 
     hidePopup("honorPopup");
+
 }
 
 
@@ -697,7 +795,9 @@ document.addEventListener("click", function (event) {
             event.target.querySelector("iframe");
 
         if (frame) {
+
             frame.src = "about:blank";
+
         }
 
         const openPopup =
@@ -706,9 +806,13 @@ document.addEventListener("click", function (event) {
             );
 
         if (!openPopup) {
+
             document.body.style.overflow = "";
+
         }
+
     }
+
 });
 
 
@@ -734,9 +838,13 @@ document.addEventListener("keydown", function (event) {
             popup.querySelector("iframe");
 
         if (frame) {
+
             frame.src = "about:blank";
+
         }
+
     });
 
     document.body.style.overflow = "";
+
 });
